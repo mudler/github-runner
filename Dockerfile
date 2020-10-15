@@ -27,8 +27,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && useradd -m github \
-    && usermod -aG sudo github \
+    && usermod -aG sudo github docker \
     && echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    
 
 USER github
 WORKDIR /home/github
